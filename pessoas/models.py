@@ -6,5 +6,5 @@ class Pessoa(models.Model):
     nome = models.CharField(max_length=100)
     idade = models.IntegerField()
 
-def _str_(self):
-    return f'{self.nome}: {self.idade} anos'
+    def _str_(self):
+        return f'{self.nome}: {self.idade} anos'
