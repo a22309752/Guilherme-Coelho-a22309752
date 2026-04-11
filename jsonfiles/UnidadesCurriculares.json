@@ -1,0 +1,38 @@
+{
+  "Fundamentos de Física": {"ano_curricular": 1, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Fundamentos de Programação": {"ano_curricular": 1, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Matemática Discreta": {"ano_curricular": 1, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Matemática I": {"ano_curricular": 1, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Sistemas Digitais": {"ano_curricular": 1, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+
+  "Álgebra Linear": {"ano_curricular": 1, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Algoritmia e Estruturas de Dados": {"ano_curricular": 1, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Arquitetura de Computadores": {"ano_curricular": 1, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Competências Comportamentais": {"ano_curricular": 1, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Linguagens de Programação I": {"ano_curricular": 1, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Matemática II": {"ano_curricular": 1, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+
+  "Arquiteturas Avançadas de Computadores": {"ano_curricular": 2, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Bases de Dados": {"ano_curricular": 2, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Desenvolvimento de Interfaces Web": {"ano_curricular": 2, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Linguagens de Programação II": {"ano_curricular": 2, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Processamento de Imagem": {"ano_curricular": 2, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Sistemas Operativos": {"ano_curricular": 2, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+
+  "Engenharia de Requisitos e Testes": {"ano_curricular": 2, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Probabilidades e Estatística": {"ano_curricular": 2, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Programação Web": {"ano_curricular": 2, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Redes de Computadores": {"ano_curricular": 2, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Sistemas de Suporte à Decisão": {"ano_curricular": 2, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+
+  "Trabalho Final de Curso": {"ano_curricular": 3, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Computação Distribuída": {"ano_curricular": 3, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Data Science": {"ano_curricular": 3, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Engenharia de Software": {"ano_curricular": 3, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Interação Humano-Máquina": {"ano_curricular": 3, "semestre": 1, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+
+  "Computação Móvel": {"ano_curricular": 3, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Inteligência Artificial": {"ano_curricular": 3, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Segurança Informática": {"ano_curricular": 3, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"},
+  "Sistemas de Informação na Nuvem": {"ano_curricular": 3, "semestre": 2, "url_uc": "https://informatica.ulusofona.pt/", "imagem_url": "https://informatica.ulusofona.pt/wp-content/uploads/sites/12/2024/03/campus.jpg"}
+}
