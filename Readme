@@ -60,6 +60,9 @@ Para correr o projeto localmente:
 python manage.py runserver
 ```
 
+Username: Guilherme
+Password:12345
+
 Depois aceder a:
 
 ```
