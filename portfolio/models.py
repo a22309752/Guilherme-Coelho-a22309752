@@ -110,7 +110,7 @@ class Formacao(models.Model):
 class MakingOf(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
-    imagem_url = models.URLField(blank=True, null=True)
+    imagem_url = models.ImageField(upload_to='portfolio/makingof', null=True, blank=True)
     observacao = models.TextField(blank=True, null=True)
 
     class Meta:
