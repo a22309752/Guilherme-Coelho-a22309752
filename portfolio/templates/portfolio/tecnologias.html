@@ -1,0 +1,17 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Tecnologias</h2>
+
+{% for tecnologia in tecnologias %}
+<div class="card">
+    <h3>{{ tecnologia.nome }}</h3>
+    <p>{{ tecnologia.descricao }}</p>
+    <p>Interesse: {{ tecnologia.nivel_interesse }}/10</p>
+    <p>Proficiência: {{ tecnologia.nivel_proficiencia }}/10</p>
+    <a href="{{ tecnologia.url_oficial }}" target="_blank">Site oficial</a>
+</div>
+{% empty %}
+<p>Ainda não existem tecnologias registadas.</p>
+{% endfor %}
+{% endblock %}

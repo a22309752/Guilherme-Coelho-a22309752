@@ -1,0 +1,36 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Licenciatura</h2>
+
+{% for licenciatura in licenciaturas %}
+<div class="card">
+    <h3>{{ licenciatura.nome }}</h3>
+    <p>{{ licenciatura.descricao }}</p>
+    <p><strong>Duração:</strong> {{ licenciatura.duracao }}</p>
+    <p><strong>Requisitos:</strong> {{ licenciatura.requisitos }}</p>
+    <a href="{{ licenciatura.url_pagina_oficial }}" target="_blank">Página oficial</a>
+</div>
+{% endfor %}
+
+<h2>Unidades Curriculares</h2>
+
+{% for uc in ucs %}
+<div class="card">
+    <h3>{{ uc.nome }}</h3>
+    <p>Ano: {{ uc.ano_curricular }}</p>
+    <p>Semestre: {{ uc.semestre }}</p>
+    <a href="{{ uc.url_uc }}" target="_blank">Ver UC</a>
+</div>
+{% endfor %}
+
+<h2>Formações</h2>
+
+{% for formacao in formacoes %}
+<div class="card">
+    <h3>{{ formacao.nome }}</h3>
+    <p>{{ formacao.instituicao }}</p>
+    <p>{{ formacao.descricao }}</p>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Making Of</h2>
+
+{% for item in makingofs %}
+<div class="card">
+    <h3>{{ item.titulo }}</h3>
+    <p>{{ item.descricao }}</p>
+    <p>{{ item.observacao }}</p>
+</div>
+{% empty %}
+<p>Ainda não existe conteúdo no Making Of.</p>
+{% endfor %}
+{% endblock %}

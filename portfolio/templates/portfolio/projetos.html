@@ -1,0 +1,18 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Projetos</h2>
+
+{% for projeto in projetos %}
+<div class="card">
+    <h3>{{ projeto.nome }}</h3>
+    <p>{{ projeto.descricao }}</p>
+    <p><strong>Ano:</strong> {{ projeto.ano_curricular }}</p>
+    <p><strong>UC:</strong> {{ projeto.uc.nome }}</p>
+
+    <a href="{{ projeto.link_projeto }}" target="_blank">Ver projeto</a>
+</div>
+{% empty %}
+<p>Ainda não existem projetos registados.</p>
+{% endfor %}
+{% endblock %}
