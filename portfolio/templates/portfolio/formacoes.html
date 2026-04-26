@@ -1,0 +1,25 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Formações</h2>
+
+<a href="{% url 'portfolio:nova_formacao' %}">
+    <button>Criar nova formação</button>
+</a>
+
+{% for formacao in formacoes %}
+<div class="card">
+    <h3>{{ formacao.nome }}</h3>
+
+    <a href="{% url 'portfolio:editar_formacao' formacao.id %}">
+        <button>Editar</button>
+    </a>
+
+    <a href="{% url 'portfolio:apagar_formacao' formacao.id %}">
+        <button>Apagar</button>
+    </a>
+</div>
+{% empty %}
+<p>Ainda não existem formações registadas.</p>
+{% endfor %}
+{% endblock %}

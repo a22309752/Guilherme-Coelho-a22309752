@@ -3,6 +3,10 @@
 {% block content %}
 <h2>Projetos</h2>
 
+<a href="{% url 'portfolio:novo_projeto' %}">
+    <button>Criar novo projeto</button>
+</a>
+
 {% for projeto in projetos %}
 <div class="card">
     <h3>{{ projeto.nome }}</h3>
@@ -12,6 +16,15 @@
 
     <a href="{{ projeto.link_projeto }}" target="_blank">Ver projeto</a>
 </div>
+
+<a href="{% url 'portfolio:editar_projeto' projeto.id %}">
+    <button>Editar</button>
+</a>
+
+<a href="{% url 'portfolio:apagar_projeto' projeto.id %}">
+    <button>Apagar</button>
+</a>
+
 {% empty %}
 <p>Ainda não existem projetos registados.</p>
 {% endfor %}

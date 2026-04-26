@@ -65,7 +65,7 @@ Depois aceder a:
 ```
 http://127.0.0.1:8000/
 ```
-Para aceder à página da aplicação ESCOLA, adicionar /escola ao final do link do site
+Para aceder à página     da aplicação ESCOLA, adicionar /escola ao final do link do site
 
 ---
 
