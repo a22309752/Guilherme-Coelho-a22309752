@@ -13,6 +13,7 @@ urlpatterns = [
     path("makingof/", views.makingof, name="makingof"),
     path("competencias/", views.competencias, name="competencias"),
     path("formacoes/", views.formacoes, name="formacoes"),
+    path("sobre/", views.sobre, name="sobre"),
 
     path("projetos/novo/", views.novo_projeto, name="novo_projeto"),
     path("projetos/<int:projeto_id>/editar/", views.editar_projeto, name="editar_projeto"),

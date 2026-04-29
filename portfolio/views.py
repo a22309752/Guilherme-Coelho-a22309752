@@ -9,6 +9,7 @@ from .models import (
     Competencia, 
     Formacao,
     TFC,
+    TipoTecnologia,
 )
 
 from .forms import ProjetoForm, TecnologiaForm, CompetenciaForm, FormacaoForm
@@ -171,3 +172,12 @@ def apagar_formacao(request, formacao_id):
     formacao = get_object_or_404(Formacao, id=formacao_id)
     formacao.delete()
     return redirect("portfolio:formacoes")
+
+def sobre(request):
+    tipos_tecnologia = TipoTecnologia.objects.all()
+    makingofs = MakingOf.objects.all()
+
+    return render(request, "portfolio/sobre.html", {
+        "tipos_tecnologia": tipos_tecnologia,
+        "makingofs": makingofs,
+    })

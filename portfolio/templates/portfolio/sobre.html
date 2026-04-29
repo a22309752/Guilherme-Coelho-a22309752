@@ -1,0 +1,166 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h1>Sobre esta aplicação</h1>
+
+<section class="card">
+    <h2>1. Arquitetura MVT do Django</h2>
+
+    <p>
+        Esta aplicação foi desenvolvida em Django, utilizando a arquitetura MVT:
+        Model, View e Template.
+    </p>
+
+    <ul>
+        <li><strong>Model:</strong> representa os dados da aplicação e está definido no ficheiro models.py.</li>
+        <li><strong>View:</strong> contém a lógica da aplicação e está definida no ficheiro views.py.</li>
+        <li><strong>Template:</strong> corresponde aos ficheiros HTML apresentados ao utilizador.</li>
+    </ul>
+
+    <p>
+        O fluxo começa quando o utilizador acede a uma URL. O Django procura essa URL em urls.py,
+        chama a view correspondente, a view pode ir buscar dados aos models e depois envia esses dados
+        para um template, que gera a página HTML final.
+    </p>
+
+    <h3>Desenho da arquitetura MVT</h3>
+    <p>Inserir aqui a fotografia do desenho feito em papel.</p>
+
+    <!-- exemplo quando tiveres a imagem -->
+    <!-- <img src="/media/portfolio/mvt.jpg" alt="Desenho da arquitetura MVT"> -->
+
+    <h3>Vídeo tutorial</h3>
+    <iframe width="560" height="315"
+        src="COLOCA_AQUI_O_LINK_DO_VIDEO"
+        title="Tutorial criação de projeto"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</section>
+
+<section class="card">
+    <h2>2. Modelação</h2>
+
+    <p>
+        A aplicação utiliza vários modelos Django para representar os dados do portfólio.
+        Cada classe definida em models.py corresponde a uma tabela na base de dados.
+    </p>
+
+    <ul>
+        <li><strong>Licenciatura:</strong> guarda informação sobre o curso.</li>
+        <li><strong>Docente:</strong> guarda informação sobre docentes.</li>
+        <li><strong>Unidade Curricular:</strong> representa cadeiras do curso.</li>
+        <li><strong>Projeto:</strong> representa projetos desenvolvidos.</li>
+        <li><strong>Tecnologia:</strong> representa tecnologias usadas nos projetos.</li>
+        <li><strong>TipoTecnologia:</strong> permite classificar tecnologias por tipo.</li>
+        <li><strong>Competência:</strong> representa competências adquiridas.</li>
+        <li><strong>Formação:</strong> representa formações realizadas.</li>
+        <li><strong>MakingOf:</strong> regista o processo de desenvolvimento.</li>
+        <li><strong>TFC:</strong> representa trabalhos finais de curso.</li>
+    </ul>
+
+    <p>
+        Existem relações entre os modelos. Por exemplo, um Projeto pertence a uma Unidade Curricular
+        e pode estar associado a várias Tecnologias e várias Competências.
+    </p>
+
+    <h3>Diagrama Entidade-Relação</h3>
+    <p>Inserir aqui a fotografia do desenho do DER feito em papel.</p>
+
+    <!-- exemplo quando tiveres a imagem -->
+    <!-- <img src="/media/portfolio/der.jpg" alt="Diagrama entidade relação"> -->
+</section>
+
+<section class="card">
+    <h2>3. Tecnologias utilizadas</h2>
+
+    <p>
+        As tecnologias usadas no desenvolvimento da aplicação estão organizadas por tipo.
+    </p>
+
+    {% for tipo in tipos_tecnologia %}
+        <h3>{{ tipo.nome }}</h3>
+
+        {% for tecnologia in tipo.tecnologias.all %}
+            <article class="card">
+                <h4>{{ tecnologia.nome }}</h4>
+                <p>{{ tecnologia.descricao }}</p>
+                <p>
+                    <a href="{{ tecnologia.url_oficial }}" target="_blank">
+                        Página oficial
+                    </a>
+                </p>
+            </article>
+        {% empty %}
+            <p>Não existem tecnologias neste tipo.</p>
+        {% endfor %}
+    {% endfor %}
+</section>
+
+<section class="card">
+    <h2>4. Estrutura das páginas</h2>
+
+    <p>
+        A aplicação possui várias páginas principais: Home, Licenciatura, Projetos,
+        Tecnologias, TFC, Making Of, Competências e Formações.
+    </p>
+
+    <p>
+        Algumas páginas permitem operações CRUD, ou seja, criar, editar e apagar informação,
+        como Projetos, Tecnologias, Competências e Formações.
+    </p>
+
+    <h3>Mapa de navegação</h3>
+    <p>Inserir aqui a fotografia do desenho do mapa de navegação.</p>
+
+    <!-- exemplo quando tiveres a imagem -->
+    <!-- <img src="/media/portfolio/mapa_paginas.jpg" alt="Mapa de navegação da aplicação"> -->
+</section>
+
+<section class="card">
+    <h2>5. Repositório GitHub</h2>
+
+    <p>
+        O GitHub foi utilizado para guardar o código fonte da aplicação, controlar versões
+        e manter uma cópia online do projeto.
+    </p>
+
+    <p>
+        Esta ferramenta é importante no desenvolvimento de software porque permite acompanhar
+        alterações, recuperar versões anteriores e partilhar o projeto.
+    </p>
+
+    <a href="https://github.com/a22309752/Guilherme-Coelho-a22309752/tree/Portfolio" target="_blank">
+        Ver repositório GitHub
+    </a>
+</section>
+
+<section class="card">
+    <h2>6. Making Of</h2>
+
+    <p>
+        O Making Of apresenta o processo de desenvolvimento da aplicação, incluindo alterações
+        feitas aos models, views, templates, formulários e estrutura do projeto.
+    </p>
+
+    <a href="{% url 'portfolio:makingof' %}">
+        Ver Making Of completo
+    </a>
+
+    {% for item in makingofs %}
+        <article class="card">
+            <h3>{{ item.titulo }}</h3>
+            <p>{{ item.descricao }}</p>
+
+            {% if item.imagem_url %}
+                <img src="{{ item.imagem_url.url }}" alt="{{ item.titulo }}">
+            {% endif %}
+
+            {% if item.observacao %}
+                <p>{{ item.observacao }}</p>
+            {% endif %}
+        </article>
+    {% endfor %}
+</section>
+
+{% endblock %}

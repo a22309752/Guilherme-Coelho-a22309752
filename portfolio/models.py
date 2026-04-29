@@ -57,6 +57,16 @@ class Competencia(models.Model):
     def __str__(self):
         return self.nome
 
+class TipoTecnologia(models.Model):
+    nome = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name = "Tipo de Tecnologia"
+        verbose_name_plural = "Tipos de Tecnologias"
+
+    def __str__(self):
+        return self.nome
+
 
 class Tecnologia(models.Model):
     nome =  models.CharField(max_length=100)
@@ -65,6 +75,7 @@ class Tecnologia(models.Model):
     logo_url = models.URLField()
     nivel_interesse = models.IntegerField()
     nivel_proficiencia = models.IntegerField()
+    tipo = models.ForeignKey(TipoTecnologia,on_delete=models.CASCADE,related_name="tecnologias",null=True,blank=True)
     
     class Meta:
         verbose_name = "Tecnologia"
@@ -133,3 +144,4 @@ class TFC(models.Model):
 
     def __str__(self):
         return self.titulo
+
