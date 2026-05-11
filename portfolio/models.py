@@ -4,9 +4,12 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 class Licenciatura(models.Model):
     nome = models.CharField(max_length=100)
-    descrição = models.TextField()
-    requisitos = models.CharField(max_length=100)
+    formato_curso = models.CharField(max_length=100,blank= True, null=True)
     duracao = models.CharField(max_length=100)
+    semestres = models.IntegerField(blank= True, null=True)
+    creditos = models.CharField(max_length=100,blank= True, null=True)
+    descricao = models.TextField(blank= True, null=True)
+    requisitos = models.JSONField(blank= True, null=True)
     url_oficial = models.URLField(blank= True, null=True)
 
     class Meta:
@@ -144,7 +147,6 @@ class MakingOf(models.Model):
 class TFC(models.Model):
     titulo = models.CharField(max_length=100)
     autor = models.CharField(max_length=100)
-    url_oficial = models.URLField(blank= True, null=True)
     descricao = models.TextField()
     imagem = models.ImageField(upload_to="media/")
 
