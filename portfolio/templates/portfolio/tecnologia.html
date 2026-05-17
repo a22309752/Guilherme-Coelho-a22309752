@@ -3,9 +3,11 @@
 {% block content %}
 <h2>Tecnologias</h2>
 
-<a href="{% url 'portfolio:nova_tecnologia' %}">
-    <button>Nova Tecnologia</button>
-</a>
+{% if is_gestor %}
+    <a href="{% url 'portfolio:nova_tecnologia' %}">
+        <button>Nova Tecnologia</button>
+    </a>
+{% endif %}
 
 {% for tecnologia in tecnologias %}
 <div class="card">
@@ -24,17 +26,19 @@
         Site oficial
     </a>
 
-    <p>
-        <a href="{% url 'portfolio:editar_tecnologia' tecnologia.id %}">
-            Editar
-        </a>
+    {% if is_gestor %}
+        <p>
+            <a href="{% url 'portfolio:editar_tecnologia' tecnologia.id %}">
+                Editar
+            </a>
 
-        |
+            |
 
-        <a href="{% url 'portfolio:apagar_tecnologia' tecnologia.id %}">
-            Apagar
-        </a>
-    </p>
+            <a href="{% url 'portfolio:apagar_tecnologia' tecnologia.id %}">
+                Apagar
+            </a>
+        </p>
+    {% endif %}
 </div>
 
 {% empty %}

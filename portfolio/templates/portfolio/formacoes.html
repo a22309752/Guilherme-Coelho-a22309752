@@ -3,9 +3,11 @@
 {% block content %}
 <h2>Formações</h2>
 
-<a href="{% url 'portfolio:nova_formacao' %}">
-    <button>Nova Formação</button>
-</a>
+{% if is_gestor %}
+    <a href="{% url 'portfolio:nova_formacao' %}">
+        <button>Nova Formação</button>
+    </a>
+{% endif %}
 
 {% for formacao in formacoes %}
 <div class="card"> 
@@ -24,17 +26,19 @@
         Página oficial
     </a>
 
-    <p>
-        <a href="{% url 'portfolio:editar_formacao' formacao.id %}">
-            Editar
-        </a>
+    {% if is_gestor %}
+        <p>
+            <a href="{% url 'portfolio:editar_formacao' formacao.id %}">
+                Editar
+            </a>
 
-        |
+            |
 
-        <a href="{% url 'portfolio:apagar_formacao' formacao.id %}">
-            Apagar
-        </a>
-    </p>
+            <a href="{% url 'portfolio:apagar_formacao' formacao.id %}">
+                Apagar
+            </a>
+        </p>
+    {% endif %}
 </div>
 
 {% empty %}

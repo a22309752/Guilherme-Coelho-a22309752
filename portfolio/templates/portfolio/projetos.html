@@ -2,19 +2,26 @@
 
 {% block content %}
 <h2>Projetos</h2>
+
+{% if is_gestor %}
     <a href="{% url 'portfolio:novo_projeto' %}">
         <button>Inserir novo Projeto</button>
     </a>
+{% endif %}
 
 {% for projeto in projetos %}
 <div class="card">
     <h3>{{ projeto.nome }}</h3>
-    <a href="{% url 'portfolio:edita_projeto' projeto.id %}">
-        <button>Editar Projeto</button>
-    </a>
-     <a href="{% url 'portfolio:apaga_projeto' projeto.id %}">
-        <button>Apaga Projeto</button>
-    </a>
+
+    {% if is_gestor %}
+        <a href="{% url 'portfolio:edita_projeto' projeto.id %}">
+            <button>Editar Projeto</button>
+        </a>
+        <a href="{% url 'portfolio:apaga_projeto' projeto.id %}">
+            <button>Apaga Projeto</button>
+        </a>
+    {% endif %}
+
     <p>Ano curricular:{{ projeto.ano_curricular }} Semestre:{{ projeto.semestre }} </p>
     <p>Descrição:{{ projeto.descricao }}</p>
     <p>{{ projeto.imagem }}</p>

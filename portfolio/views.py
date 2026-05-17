@@ -12,7 +12,8 @@ from .models import (
 )
 
 from .forms import ProjetoForm, TecnologiaForm, CompetenciaForm, FormacaoForm
-
+from django.contrib.auth.decorators import login_required, user_passes_test
+from accounts.utils import is_gestor_portfolio
 
 def home(request):
     return render(request, "portfolio/base.html")
@@ -81,7 +82,8 @@ def uc(request, uc_id):
         "uc": uc
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def novo_projeto(request):
     form = ProjetoForm(request.POST or None, request.FILES or None)
 
@@ -93,7 +95,8 @@ def novo_projeto(request):
         "form": form
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def edita_projeto(request, projeto_id):
     projeto = get_object_or_404(Projeto, id=projeto_id)
 
@@ -112,7 +115,8 @@ def edita_projeto(request, projeto_id):
         "projeto": projeto
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def apaga_projeto(request, projeto_id):
     projeto = get_object_or_404(Projeto, id=projeto_id)
 
@@ -124,7 +128,8 @@ def apaga_projeto(request, projeto_id):
         "projeto": projeto
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def nova_tecnologia(request):
     form = TecnologiaForm(request.POST or None, request.FILES or None)
 
@@ -136,7 +141,8 @@ def nova_tecnologia(request):
         "form": form
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def editar_tecnologia(request, tecnologia_id):
     tecnologia = get_object_or_404(Tecnologia, id=tecnologia_id)
 
@@ -155,7 +161,8 @@ def editar_tecnologia(request, tecnologia_id):
         "tecnologia": tecnologia
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def apagar_tecnologia(request, tecnologia_id):
     tecnologia = get_object_or_404(Tecnologia, id=tecnologia_id)
 
@@ -167,7 +174,8 @@ def apagar_tecnologia(request, tecnologia_id):
         "tecnologia": tecnologia
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def nova_competencia(request):
     form = CompetenciaForm(request.POST or None)
 
@@ -179,7 +187,8 @@ def nova_competencia(request):
         "form": form
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def editar_competencia(request, competencia_id):
     competencia = get_object_or_404(Competencia, id=competencia_id)
 
@@ -197,7 +206,8 @@ def editar_competencia(request, competencia_id):
         "competencia": competencia
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def apagar_competencia(request, competencia_id):
     competencia = get_object_or_404(Competencia, id=competencia_id)
 
@@ -209,7 +219,8 @@ def apagar_competencia(request, competencia_id):
         "competencia": competencia
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def nova_formacao(request):
     form = FormacaoForm(request.POST or None, request.FILES or None)
 
@@ -221,7 +232,8 @@ def nova_formacao(request):
         "form": form
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def editar_formacao(request, formacao_id):
     formacao = get_object_or_404(Formacao, id=formacao_id)
 
@@ -240,7 +252,8 @@ def editar_formacao(request, formacao_id):
         "formacao": formacao
     })
 
-
+@login_required
+@user_passes_test(is_gestor_portfolio)
 def apagar_formacao(request, formacao_id):
     formacao = get_object_or_404(Formacao, id=formacao_id)
 
