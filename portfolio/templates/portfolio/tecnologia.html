@@ -1,0 +1,43 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Tecnologias</h2>
+
+<a href="{% url 'portfolio:nova_tecnologia' %}">
+    <button>Nova Tecnologia</button>
+</a>
+
+{% for tecnologia in tecnologias %}
+<div class="card">
+    <h3>{{ tecnologia.nome }}</h3>
+
+    {% if tecnologia.logo_oficial %}
+        <p>
+            <img src="{{ tecnologia.logo_oficial.url }}" alt="{{ tecnologia.nome }}" width="150">
+        </p>
+    {% endif %}
+
+    <p>{{ tecnologia.descricao }}</p>
+    <p>Interesse: {{ tecnologia.nivel_interesse }}/10</p>
+
+    <a href="{{ tecnologia.url_oficial }}" target="_blank">
+        Site oficial
+    </a>
+
+    <p>
+        <a href="{% url 'portfolio:editar_tecnologia' tecnologia.id %}">
+            Editar
+        </a>
+
+        |
+
+        <a href="{% url 'portfolio:apagar_tecnologia' tecnologia.id %}">
+            Apagar
+        </a>
+    </p>
+</div>
+
+{% empty %}
+<p>Ainda não existem tecnologias registadas.</p>
+{% endfor %}
+{% endblock %}

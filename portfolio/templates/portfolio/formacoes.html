@@ -1,0 +1,43 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Formações</h2>
+
+<a href="{% url 'portfolio:nova_formacao' %}">
+    <button>Nova Formação</button>
+</a>
+
+{% for formacao in formacoes %}
+<div class="card"> 
+    <h3>{{ formacao.nome }}</h3>
+
+    {% if formacao.logo_oficial %}
+        <p>
+            <img src="{{ formacao.logo_oficial.url }}" alt="{{ formacao.nome }}" width="150">
+        </p>
+    {% endif %}
+
+    <p>Descrição: {{ formacao.descricao }}</p>
+    <p>Data: {{ formacao.data_inicio }} - {{ formacao.data_fim }}</p>
+
+    <a href="{{ formacao.url_oficial }}" target="_blank">
+        Página oficial
+    </a>
+
+    <p>
+        <a href="{% url 'portfolio:editar_formacao' formacao.id %}">
+            Editar
+        </a>
+
+        |
+
+        <a href="{% url 'portfolio:apagar_formacao' formacao.id %}">
+            Apagar
+        </a>
+    </p>
+</div>
+
+{% empty %}
+<p>Ainda não existem formações registadas.</p>
+{% endfor %}
+{% endblock %}

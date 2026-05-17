@@ -1,0 +1,10 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<div class="card"> 
+    <h3>{{ uc.nome }}</h3>
+    <p>{{ uc.docente.nome }}</p>
+    <p>{{ uc.imagem }}</p>
+    <a href="{{ uc.url_oficial }}" target="blank">Página oficial</a>
+</div>
+{% endblock %}

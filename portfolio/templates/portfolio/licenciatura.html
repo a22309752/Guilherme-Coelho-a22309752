@@ -1,0 +1,61 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Licenciatura</h2>
+
+<div class="card">
+    <h3>{{ licenciatura.nome }}</h3>
+    <p><strong>Formato do curso:</strong>{{ licenciatura.formato_curso }} <strong>Duração:</strong> {{ licenciatura.duracao }} <strong>Semestres:</strong> {{ licenciatura.semestres }} <strong>Créditos:</strong> {{ licenciatura.creditos }}</p>
+    <p><strong>Descrição:</strong> {{ licenciatura.descricao }}</p>
+    <p><strong>Requisitos:</strong> {{ licenciatura.requisitos }}</p>
+    <a href="{{ licenciatura.url_oficial }}" target="blank">Página oficial</a>
+
+    <h4>Unidades Curriculares</h4>
+    <ul> 
+        <li>
+            <strong>1º ano:</strong>
+            {% for uc in licenciatura.UCs.all %}
+            {% if uc.ano_curricular == 1 %}
+                <div class="uc-card">
+                    <a href="{% url 'portfolio:ucs' uc.id %}">
+                        {{ uc.nome }}
+                    </a>
+                    <span> — {{ uc.semestre }}º semestre</span>
+                </div>
+            {% endif %}
+            {% endfor %}
+        
+        </li>
+        <li>
+            <strong>2º ano:</strong>
+            {% for uc in licenciatura.UCs.all %}
+            {% if uc.ano_curricular == 2 %}
+                <div class="uc-card">
+                    <a href="{% url 'portfolio:ucs' uc.id %}">
+                        {{ uc.nome }}
+                    </a>
+                    <span> — {{ uc.semestre }}º semestre</span>
+                </div>
+            {% endif %}
+            {% endfor %}
+        
+        </li>
+        <li>
+            <strong>3º ano:</strong>
+            {% for uc in licenciatura.UCs.all %}
+            {% if uc.ano_curricular == 3 %}
+                <div class="uc-card">
+                    <a href="{% url 'portfolio:ucs' uc.id %}">
+                        {{ uc.nome }} {{ uc.semestre }}
+                    </a>
+                    <span> — {{ uc.semestre }}º semestre</span>
+                </div>
+            {% endif %}
+            {% endfor %}
+        
+        </li>
+    </ul>
+    
+</div>
+{% endblock %}
+

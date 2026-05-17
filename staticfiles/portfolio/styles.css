@@ -1,0 +1,392 @@
+/* =========================
+   RESET / BASE
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background: #0f172a;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #111827;
+    color: white;
+    padding: 28px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+nav {
+    margin-top: 18px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 9px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    color: white;
+    background: #db2777;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+main {
+    width: min(1100px, calc(100% - 32px));
+    margin: 36px auto;
+}
+
+h1,
+h2,
+h3 {
+    color: #f8fafc;
+    line-height: 1.2;
+}
+
+main > h1,
+main > h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background: linear-gradient(135deg, #1e293b, #111827);
+    padding: 44px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.hero h1,
+.hero h2 {
+    margin-top: 0;
+    font-size: 38px;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: 12px auto 0;
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: #111827;
+    padding: 26px;
+    margin-bottom: 24px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(219, 39, 119, 0.45);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.card p {
+    color: #cbd5e1;
+}
+
+.card a {
+    color: #f472b6;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.card a:hover {
+    color: #fb7185;
+    text-decoration: underline;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+form {
+    max-width: 720px;
+    background: #111827;
+    padding: 32px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+form p {
+    margin: 0 0 20px 0;
+}
+
+label,
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #c7d2fe;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+input,
+textarea,
+select,
+form input,
+form textarea,
+form select {
+    width: 100%;
+    display: block;
+    padding: 13px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    background: #f8fafc;
+    color: #0f172a;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #db2777;
+    box-shadow: 0 0 0 4px rgba(219, 39, 119, 0.22);
+}
+
+textarea,
+form textarea {
+    min-height: 170px;
+    resize: vertical;
+}
+
+input[type="file"],
+form input[type="file"] {
+    background: #f8fafc;
+    padding: 12px;
+    cursor: pointer;
+}
+
+input[type="date"],
+input[type="time"],
+form input[type="date"],
+form input[type="time"] {
+    max-width: 280px;
+}
+
+select,
+form select {
+    cursor: pointer;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button,
+input[type="submit"],
+input[type="button"],
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 130px;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #db2777, #9333ea);
+    color: white;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(219, 39, 119, 0.32);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(219, 39, 119, 0.42);
+}
+
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+.btn:active {
+    transform: translateY(0);
+}
+
+/* =========================
+   TABLES
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    background: #111827;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+th,
+td {
+    padding: 15px 18px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+th {
+    background: #1e293b;
+    color: #f8fafc;
+    font-weight: 900;
+}
+
+td {
+    color: #cbd5e1;
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 14px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 24px;
+    margin-top: 48px;
+    background: #111827;
+    color: #94a3b8;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+    header {
+        padding: 24px 18px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        padding: 8px 11px;
+        font-size: 14px;
+    }
+
+    main {
+        width: min(100% - 24px, 1100px);
+        margin: 24px auto;
+    }
+
+    .hero {
+        padding: 30px 22px;
+    }
+
+    .hero h1,
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    form {
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    input[type="date"],
+    input[type="time"],
+    form input[type="date"],
+    form input[type="time"] {
+        max-width: 100%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+}

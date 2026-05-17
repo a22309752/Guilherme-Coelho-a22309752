@@ -1,0 +1,15 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Edita Projeto</h2>
+
+<form action="{%url 'portfolio:edita_projeto' projeto.id %}" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    
+        {{ form.as_p }}
+
+    <input type="submit" value="Criar projeto">
+</form>
+
+{% endblock %}

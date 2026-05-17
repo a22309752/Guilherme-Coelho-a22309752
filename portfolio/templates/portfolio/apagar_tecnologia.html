@@ -1,0 +1,14 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Apagar Tecnologia</h2>
+
+<form action="" method="post">
+
+    {% csrf_token %}
+    <p>Tens a certeza que queres apagar "{{ tecnologia.nome }}"?</p>
+
+    <input type="submit" value="Apagar tecnologia">
+</form>
+
+{% endblock %}

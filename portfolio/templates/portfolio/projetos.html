@@ -1,0 +1,34 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Projetos</h2>
+    <a href="{% url 'portfolio:novo_projeto' %}">
+        <button>Inserir novo Projeto</button>
+    </a>
+
+{% for projeto in projetos %}
+<div class="card">
+    <h3>{{ projeto.nome }}</h3>
+    <a href="{% url 'portfolio:edita_projeto' projeto.id %}">
+        <button>Editar Projeto</button>
+    </a>
+     <a href="{% url 'portfolio:apaga_projeto' projeto.id %}">
+        <button>Apaga Projeto</button>
+    </a>
+    <p>Ano curricular:{{ projeto.ano_curricular }} Semestre:{{ projeto.semestre }} </p>
+    <p>Descrição:{{ projeto.descricao }}</p>
+    <p>{{ projeto.imagem }}</p>
+    <p>Conceitos aplicados: {{ projeto.conceitos_aplicados }}</p>
+    <p>Tecnologias usadas:{{ projeto.tecnologia }}</p>
+    <p>Comppetências:{{ projeto.competencia.nome }}</p>
+    <p>Unidade Curricular:{{ projeto.uc.nome }}</p>
+ </div>
+
+ {% empty %}
+<p>Ainda não existem projetos registados.</p>
+{% endfor %}
+{% endblock %}
+
+
+   
+    
