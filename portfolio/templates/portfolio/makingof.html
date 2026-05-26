@@ -1,0 +1,76 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+
+<h2>Making-of</h2>
+
+{% for makingof in makingofs %}
+
+<div class="card">
+
+    <h3>{{ makingof.titulo }}</h3>
+
+    <p>
+        <strong>Entidade:</strong>
+        {{ makingof.get_entidade_display }}
+    </p>
+
+    <hr>
+
+    <p>
+        <strong>Descrição do trabalho:</strong><br>
+        {{ makingof.descricao_trabalho }}
+    </p>
+
+    <p>
+        <strong>Decisões tomadas:</strong><br>
+        {{ makingof.decisoes_tomadas }}
+    </p>
+
+    {% if makingof.erros_encontrados %}
+    <p>
+        <strong>Erros encontrados:</strong><br>
+        {{ makingof.erros_encontrados }}
+    </p>
+    {% endif %}
+
+    {% if makingof.correcoes_realizadas %}
+    <p>
+        <strong>Correções realizadas:</strong><br>
+        {{ makingof.correcoes_realizadas }}
+    </p>
+    {% endif %}
+
+    {% if makingof.imagem1 %}
+    <div class="imagem-makingof">
+        <p><strong>Imagem 1:</strong></p>
+
+        <img 
+            src="{{ makingof.imagem1.url }}" 
+            alt="{{ makingof.titulo }}"
+            width="400"
+        >
+    </div>
+    {% endif %}
+
+    {% if makingof.imagem2 %}
+    <div class="imagem-makingof">
+        <p><strong>Imagem 2:</strong></p>
+
+        <img 
+            src="{{ makingof.imagem2.url }}" 
+            alt="{{ makingof.titulo }}"
+            width="400"
+        >
+    </div>
+    {% endif %}
+
+</div>
+
+{% empty %}
+
+<p>Ainda não existem registos no making-of.</p>
+
+{% endfor %}
+
+{% endblock %}

@@ -145,8 +145,8 @@ class MakingOf(models.Model):
 
     
 class TFC(models.Model):
-    titulo = models.CharField(max_length=100)
-    autor = models.CharField(max_length=100)
+    titulo = models.CharField(max_length=300)
+    autor = models.CharField(max_length=300)
     descricao = models.TextField()
     imagem = models.ImageField(upload_to="media/")
 

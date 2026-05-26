@@ -17,25 +17,49 @@
         <a href="{% url 'portfolio:edita_projeto' projeto.id %}">
             <button>Editar Projeto</button>
         </a>
+
         <a href="{% url 'portfolio:apaga_projeto' projeto.id %}">
             <button>Apaga Projeto</button>
         </a>
     {% endif %}
 
-    <p>Ano curricular:{{ projeto.ano_curricular }} Semestre:{{ projeto.semestre }} </p>
-    <p>Descrição:{{ projeto.descricao }}</p>
-    <p>{{ projeto.imagem }}</p>
-    <p>Conceitos aplicados: {{ projeto.conceitos_aplicados }}</p>
-    <p>Tecnologias usadas:{{ projeto.tecnologia }}</p>
-    <p>Comppetências:{{ projeto.competencia.nome }}</p>
-    <p>Unidade Curricular:{{ projeto.uc.nome }}</p>
- </div>
+    <p>
+        <strong>Ano curricular:</strong> {{ projeto.ano_curricular }}
+        <strong>Semestre:</strong> {{ projeto.semestre }}
+    </p>
 
- {% empty %}
+    <p><strong>Descrição:</strong> {{ projeto.descricao }}</p>
+
+    {% if projeto.imagem %}
+        <p><strong>Imagem:</strong></p>
+        <img src="{{ projeto.imagem.url }}" alt="{{ projeto.nome }}" width="300">
+    {% endif %}
+
+    <p><strong>Conceitos aplicados:</strong> {{ projeto.conceitos_aplicados }}</p>
+
+    <p>
+        <strong>Tecnologias usadas:</strong>
+        {% for tecnologia in projeto.tecnologia.all %}
+            {{ tecnologia.nome }}{% if not forloop.last %}, {% endif %}
+        {% empty %}
+            Nenhuma tecnologia associada.
+        {% endfor %}
+    </p>
+
+    <p>
+        <strong>Competências:</strong>
+        {% for competencia in projeto.competencia.all %}
+            {{ competencia.nome }}{% if not forloop.last %}, {% endif %}
+        {% empty %}
+            Nenhuma competência associada.
+        {% endfor %}
+    </p>
+
+    <p><strong>Unidade Curricular:</strong> {{ projeto.uc.nome }}</p>
+</div>
+
+{% empty %}
 <p>Ainda não existem projetos registados.</p>
 {% endfor %}
+
 {% endblock %}
-
-
-   
-    

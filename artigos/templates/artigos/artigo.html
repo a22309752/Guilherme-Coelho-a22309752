@@ -1,0 +1,93 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+    <h2>Artigos</h2>
+
+    {% for artigo in artigos %}
+        <div class="card">
+            <h3>{{ artigo.titulo }}</h3>
+
+            <p>
+                Publicado por <strong>{{ artigo.autor.username }}</strong>
+                em {{ artigo.data_de_criação }}
+            </p>
+
+            <p>{{ artigo.texto }}</p>
+
+            {% if artigo.fotografia %}
+                <img src="{{ artigo.fotografia.url }}" alt="{{ artigo.titulo }}" width="300">
+            {% endif %}
+
+            {% if artigo.link_externo %}
+                <p>
+                    <a href="{{ artigo.link_externo }}" target="_blank">
+                        Link externo
+                    </a>
+                </p>
+            {% endif %}
+
+            {% if request.user == artigo.autor %}
+                <p>
+                    <a class="btn" href="{% url 'artigos:editar' artigo.id %}">
+                        Editar artigo
+                    </a>
+                </p>
+            {% endif %}
+
+            {% if request.user.is_authenticated %}
+                <form class="like-form" action="{% url 'artigos:like' %}" method="POST">
+                    {% csrf_token %}
+
+                    <input type="hidden" name="artigo_id" value="{{ artigo.id }}">
+
+                    {% if request.user in artigo.likes.all %}
+                        <button type="submit">Unlike</button>
+                    {% else %}
+                        <button type="submit">Like</button>
+                    {% endif %}
+                </form>
+            {% else %}
+                <p>Inicia sessão para dar like.</p>
+            {% endif %}
+
+            <p>
+                <strong>{{ artigo.total_likes }} likes</strong>
+            </p>
+
+            <hr>
+
+            <h4>Comentários</h4>
+
+            {% for comentario in artigo.comentarios.all %}
+                <div class="comentario">
+                    <p>
+                        <strong>{{ comentario.autor.username }}</strong>
+                        em {{ comentario.criado_em }}
+                    </p>
+
+                    <p>
+                        {{ comentario.texto }}
+                    </p>
+                </div>
+            {% empty %}
+                <p>Ainda não existem comentários.</p>
+            {% endfor %}
+
+            {% if request.user.is_authenticated %}
+                <form class="like-form" action="{% url 'artigos:comentar' %}" method="POST">
+                    {% csrf_token %}
+
+                    <input type="hidden" name="artigo_id" value="{{ artigo.id }}">
+
+                    <textarea name="texto" placeholder="Escreve um comentário..." required></textarea>
+
+                    <button type="submit">Comentar</button>
+                </form>
+            {% else %}
+                <p>Inicia sessão para comentar.</p>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>Ainda não existem artigos.</p>
+    {% endfor %}
+{% endblock %}
