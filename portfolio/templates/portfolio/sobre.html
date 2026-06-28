@@ -1,0 +1,99 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+
+<section class="page-header">
+    <h1>Sobre a aplicação</h1>
+    <p>
+        Esta página apresenta a estrutura técnica, as decisões de desenvolvimento
+        e as principais funcionalidades do projeto Django.
+    </p>
+</section>
+
+<section class="about-grid">
+
+    <article class="about-card">
+        <h2>Arquitetura MVT</h2>
+        <p>
+            A aplicação segue a arquitetura MVT do Django: Model, View e Template.
+            Os modelos representam as tabelas da base de dados, as views tratam a lógica
+            dos pedidos e os templates apresentam a informação ao utilizador.
+        </p>
+    </article>
+
+    <article class="about-card">
+        <h2>Modelação</h2>
+        <p>
+            A modelação foi feita com várias entidades relacionadas, como licenciaturas,
+            unidades curriculares, projetos, tecnologias, competências, formações,
+            artigos e comentários. As relações entre modelos permitem organizar a informação
+            de forma estruturada e reutilizável.
+        </p>
+    </article>
+
+    <article class="about-card">
+        <h2>Tecnologias utilizadas</h2>
+        <p>
+            O projeto foi desenvolvido com Django, HTML, CSS, Python e base de dados relacional.
+            Foram também usadas bibliotecas e serviços externos para suportar autenticação,
+            armazenamento de ficheiros e publicação da aplicação.
+        </p>
+    </article>
+
+    <article class="about-card">
+        <h2>Neon e base de dados</h2>
+        <p>
+            A base de dados em produção usa Neon, permitindo alojar os dados fora do ambiente local.
+            Esta opção é mais adequada para publicação porque mantém a informação persistente
+            e acessível em ambiente de produção.
+        </p>
+    </article>
+
+    <article class="about-card">
+        <h2>Cloudinary</h2>
+        <p>
+            O Cloudinary é usado para guardar imagens e ficheiros carregados na aplicação.
+            Isto evita depender apenas da pasta media local, que não é adequada para ambientes
+            de produção ou deploy.
+        </p>
+    </article>
+
+    <article class="about-card">
+        <h2>Pipeline CI/CD</h2>
+        <p>
+            A pipeline CI/CD permite automatizar verificações do projeto, como instalação
+            de dependências, execução de testes e validação do código. Esta prática ajuda
+            a detetar erros antes de integrar alterações no projeto principal.
+        </p>
+    </article>
+
+    <article class="about-card">
+        <h2>Estrutura das páginas</h2>
+        <p>
+            O website inclui páginas para licenciatura, unidades curriculares, projetos,
+            tecnologias, TFCs, competências, formações, artigos, making-of e informação
+            sobre a aplicação.
+        </p>
+    </article>
+
+    <article class="about-card">
+        <h2>Repositório GitHub</h2>
+        <p>
+            O código-fonte do projeto está organizado num repositório GitHub, permitindo
+            controlo de versões, registo de alterações e integração com ferramentas de
+            desenvolvimento.
+        </p>
+    </article>
+
+    <article class="about-card">
+        <h2>Making-of</h2>
+        <p>
+            A página de making-of documenta o processo de desenvolvimento, incluindo decisões
+            tomadas, dificuldades encontradas, modelação, carregamento de dados, implementação
+            de forms e evolução do projeto.
+        </p>
+    </article>
+
+</section>
+
+{% endblock %}

@@ -5,60 +5,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfólio Académico</title>
-    <link rel="stylesheet" href="{% static 'portfolio/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/styles.css' %}?v=200">
 </head>
 <body>
 
 <header> 
     <h1>Portfólio Académico</h1>
-
-    <nav>
-        <a href="{% url 'portfolio:licenciatura' %}">
-            Licenciatura
-        </a>
-
-        <a href="{% url 'portfolio:formacoes' %}">
-            Formações
-        </a>
-
-        <a href="{% url 'portfolio:projetos' %}">
-            Projetos
-        </a>
-
-        <a href="{% url 'portfolio:tecnologias' %}">
-            Tecnologias
-        </a>
-
-        <a href="{% url 'portfolio:competencias' %}">
-            Competências
-        </a>
-
-        <a href="{% url 'portfolio:tfc' %}">
-            TFCs
-        </a>
-
-        <a href="{% url 'portfolio:makingof' %}">
-            Making Of
-        </a>
-
-        {% if request.user.is_authenticated %}
-            <span>
-                Olá, {{ request.user.username }}
-            </span>
-
-            <a href="{% url 'logout' %}">
-                Logout
-            </a>
-        {% else %}
-            <a href="{% url 'login' %}">
-                Login
+        <nav>
+            <a href="{% url 'portfolio:licenciatura' %}">
+                Licenciatura
             </a>
 
-            <a href="{% url 'registo' %}">
-                Registo
+            <a href="{% url 'portfolio:docentes' %}">
+                Docentes
             </a>
-        {% endif %}
-    </nav>
+
+            <a href="{% url 'portfolio:formacoes' %}">
+                Formações
+            </a>
+
+            <a href="{% url 'portfolio:projetos' %}">
+                Projetos
+            </a>
+
+            <a href="{% url 'portfolio:tecnologias' %}">
+                Tecnologias
+            </a>
+
+            <a href="{% url 'portfolio:competencias' %}">
+                Competências
+            </a>
+
+            <a href="{% url 'portfolio:tfc' %}">
+                TFCs
+            </a>
+
+            <a href="{% url 'portfolio:makingof' %}">
+                Making Of
+            </a>
+
+            <a href="{% url 'artigos:artigo' %}">
+                Artigos
+            </a>
+
+            <a href="{% url 'portfolio:sobre' %}">
+                Sobre
+            </a>
+
+            <a href="/api/docs">Swagger API</a>
+
+            <a href="{% url 'lista_campeoes_colega' %}">API LoL</a>
+
+            {% if request.user.is_authenticated %}
+                <span>
+                    {{ request.user.username }}
+                </span>
+
+                <a href="{% url 'logout' %}">
+                    Logout
+                </a>
+            {% else %}
+                <a href="{% url 'login' %}">
+                    Login
+                </a>
+
+                <a href="{% url 'registo' %}">
+                    Registo
+                </a>
+            {% endif %}
+        </nav>
 </header>
 
 {% if messages %}

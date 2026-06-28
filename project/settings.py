@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "artigos",
     'cloudinary',
     'cloudinary_storage',
+    "holocron",
 ]
 
 MIDDLEWARE = [
@@ -164,3 +165,6 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
+
+API_COLEGA_BASE_URL = "https://guilhermeparracha22402027.pw.deisi.ulusofona.pt/lol/api"
+API_COLEGA_KEY = "JDSe22-qcAKEJrvT4xecUgp1aPKLsi8iYtg9h9CcyMc"

@@ -9,6 +9,7 @@ from .models import (
     MakingOf,
     Competencia,
     TFC,
+    Docente,
 )
 
 from .forms import ProjetoForm, TecnologiaForm, CompetenciaForm, FormacaoForm
@@ -16,7 +17,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from accounts.utils import is_gestor_portfolio
 
 def home(request):
-    return render(request, "portfolio/base.html")
+    return render(request, "portfolio/home.html")
 
 
 def licenciatura(request):
@@ -33,6 +34,14 @@ def projetos(request):
     return render(request, "portfolio/projetos.html", {
         "projetos": projetos
     })
+
+def docentes(request):
+    docentes = Docente.objects.all()
+
+    return render(request, "portfolio/docentes.html", {
+        "docentes": docentes
+    })
+
 
 
 def formacoes(request):
@@ -264,3 +273,6 @@ def apagar_formacao(request, formacao_id):
     return render(request, "portfolio/apagar_formacao.html", {
         "formacao": formacao
     })
+
+def sobre(request):
+    return render(request, "portfolio/sobre.html")

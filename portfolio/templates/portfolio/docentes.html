@@ -1,0 +1,32 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+<h2>Docentes</h2>
+
+
+
+{% for docente in docentes %}
+<div class="card">
+    <h3>{{ docente.nome }}</h3>
+
+    <p>
+    <strong>Email:</strong>
+    <a href="mailto:{{ docente.email }}">
+        {{ docente.email }}
+    </a>
+    </p>
+
+    <p>
+    <strong>Url Oficial:</strong>
+    <a href="{{ docente.url_oficial }}" target="_blank">
+        {{ docente.url_oficial }}
+    </a>
+</p>
+
+</div>
+
+{% empty %}
+<p>Ainda não existem docentes registados.</p>
+{% endfor %}
+
+{% endblock %}

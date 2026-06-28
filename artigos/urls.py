@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import artigo_view, like_view, comentar_view, editar_artigo_view
+from .views import artigo_view, like_view, comentar_view, editar_artigo_view, novo_artigo_view
 app_name = "artigos"
 
 urlpatterns = [
@@ -7,4 +7,5 @@ urlpatterns = [
     path("like/", like_view, name= "like"),
     path("comentar/", comentar_view, name="comentar"),
     path("editar/<int:artigo_id>/", editar_artigo_view, name="editar"),
+    path("novo/", novo_artigo_view, name="novo"),
 ]

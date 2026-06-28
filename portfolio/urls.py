@@ -8,6 +8,7 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("licenciatura/", views.licenciatura, name="licenciatura"),
     path("projetos/", views.projetos, name="projetos"),
+    path("docentes/", views.docentes, name="docentes"),
     path("tecnologias/", views.tecnologias, name="tecnologias"),
     path("tfc/", views.tfc, name="tfc"),
     path("makingof/", views.makingof, name="makingof"),
@@ -30,4 +31,5 @@ urlpatterns = [
     path("formacoes/nova/", views.nova_formacao, name="nova_formacao"),
     path("formacoes/<int:formacao_id>/editar/", views.editar_formacao, name="editar_formacao"),
     path("formacoes/<int:formacao_id>/apagar/", views.apagar_formacao, name="apagar_formacao"),
+    path("sobre/", views.sobre, name="sobre"),
 ]

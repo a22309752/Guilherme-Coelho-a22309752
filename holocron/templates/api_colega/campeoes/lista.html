@@ -1,0 +1,65 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+
+<h1>Campeões da API LoL</h1>
+
+<p>
+    <a href="{% url 'criar_campeao_colega' %}" class="btn">
+        Criar novo campeão
+    </a>
+</p>
+
+<hr>
+
+{% if campeoes %}
+
+    <ul>
+        {% for campeao in campeoes %}
+         <div class="card">
+                <h3>{{ campeao.nome }}</h3>
+
+                <p>
+                    <strong>Título:</strong> {{ campeao.titulo }}
+                </p>
+
+                <p>
+                    <strong>Descrição:</strong> {{ campeao.descricao }}
+                </p>
+
+                <p>
+                    <strong>Ano de lançamento:</strong> {{ campeao.ano_lancamento }}
+                </p>
+
+                <p>
+                    <strong>ID da classe:</strong> {{ campeao.classe_id }}
+                </p>
+
+                <p>
+                    <a href="{% url 'detalhe_campeao_colega' campeao.id %}" class="btn">
+                        Ver detalhes
+                    </a>
+                    |
+                    <a href="{% url 'editar_campeao_colega' campeao.id %}" class="btn">
+                        Editar
+                    </a>
+                    |
+                    <a href="{% url 'apagar_campeao_colega' campeao.id %}" class="btn">
+                        Apagar
+                    </a>
+                </p>
+
+        </div>
+           
+            <hr>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Não existem campeões para mostrar.</p>
+{% endif %}
+
+<p>
+    <a href="/">Voltar ao início</a>
+</p>
+
+{% endblock %}

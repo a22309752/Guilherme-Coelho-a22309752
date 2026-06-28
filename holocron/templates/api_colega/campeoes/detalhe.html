@@ -1,0 +1,57 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+
+<h1>Detalhe do Campeão</h1>
+
+{% if campeao %}
+    <p>
+        <strong>ID:</strong> {{ campeao.id }}
+    </p>
+
+    <p>
+        <strong>Nome:</strong> {{ campeao.nome }}
+    </p>
+
+    <p>
+        <strong>Título:</strong> {{ campeao.titulo }}
+    </p>
+
+    <p>
+        <strong>Descrição:</strong> {{ campeao.descricao }}
+    </p>
+
+    <p>
+        <strong>Ano de lançamento:</strong> {{ campeao.ano_lancamento }}
+    </p>
+
+    <p>
+        <strong>ID da classe:</strong> {{ campeao.classe_id }}
+    </p>
+
+    <hr>
+
+    <p>
+        <a href="{% url 'editar_campeao_colega' campeao.id %}">
+            Editar
+        </a>
+        |
+        <a href="{% url 'apagar_campeao_colega' campeao.id %}">
+            Apagar
+        </a>
+        |
+        <a href="{% url 'lista_campeoes_colega' %}">
+            Voltar à lista
+        </a>
+    </p>
+{% else %}
+    <p>Campeão não encontrado.</p>
+
+    <p>
+        <a href="{% url 'lista_campeoes_colega' %}">
+            Voltar à lista
+        </a>
+    </p>
+{% endif %}
+
+{% endblock %}

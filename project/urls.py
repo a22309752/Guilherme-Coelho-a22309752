@@ -16,14 +16,18 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include   
+from django.urls import path, include  
+from holocron.api import api as holocron_api 
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("portfolio.urls")),
     path("accounts/", include("accounts.urls")),
-    path("artigos/", include("artigos.urls"))
+    path("artigos/", include("artigos.urls")),
+    path("", include("holocron.urls")),
+    path("api/", holocron_api.urls),
+
 ]
 
 from django.conf import settings

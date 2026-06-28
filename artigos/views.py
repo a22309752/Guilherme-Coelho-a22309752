@@ -34,7 +34,7 @@ def like_view(request):
             if like.value == "Like":
                 like.value == "Unlike"
             else:
-                like.value = "Like"
+                like.value == "Like"
     return redirect("artigos:artigo")
 
     
@@ -77,3 +77,15 @@ def editar_artigo_view(request, artigo_id):
     }
 
     return render(request, "artigos/editar_artigo.html", context)
+
+@login_required
+def novo_artigo_view(request):
+    form = ArtigoForm(request.POST or None, request.FILES or None)
+
+    if form.is_valid():
+        artigo = form.save(commit=False)
+        artigo.autor = request.user
+        artigo.save()
+        return redirect("artigos:artigo")
+
+    return render(request, "artigos/novo_artigo.html", {"form": form})
